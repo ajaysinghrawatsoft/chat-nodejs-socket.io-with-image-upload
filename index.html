@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title> chat app</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      .chat-area form {  padding: 3px; position: fixed; bottom: 0;  }
+      /*#.chat-area form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      #.chat-area form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; width: 100%}*/
+      #divUserName { padding: 30px 0px; margin-top: 20%; }
+      .user-parent-div {background-color: #4285f4;}
+      .chat-area { margin-left: 35%; }
+      #hideMsgForm { width: 60%; margin-right: .5%; }
+      #m { width: 100%; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row col-md-12">
+        <div class="page-header">
+          <h1>Texty</h1>      
+        </div>
+        <div class="user-parent-div">
+          <div id="divUserName"> 
+            <form class="form-inline" class="form-horizontal" action="#">
+              <div class="form-group col-md-offset-4">
+                <label for="email">Username:</label>
+                <input type="text" autocomplete="off" required="true" placeholder="Enter Your Username " class="form-control" id="uname">
+              </div>
+              <button type="button" id="setUname" class="btn btn-default">GO..</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <!-- Chat Area -->
+      <div class="row chat-area">
+        <div class="col-md-12">
+        <ul id="messages"></ul>
+        <form class="form-inline" id="hideMsgForm"  style="display: none;" class="form-horizontal col-md-7" action="#">
+          <div class="form-group col-md-8">
+            <input id="m" type="text" autocomplete="off" required="true" placeholder="Enter Message " class="form-control " >
+          </div>
+          <button type="button" id="send" class="btn btn-success">Send</button>
+          <div class="form-group">  
+            <input id="mImage" type=file />
+          </div>  
+        </form>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
